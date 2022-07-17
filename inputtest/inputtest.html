@@ -26,29 +26,81 @@
 
 <body>
     <div class="container-xl mt-5 px-3">
-        <h1>InputTest</h1>
+        <h1 class="mb-4">InputTest</h1>
         <h2>Input Type Test</h2>
         <div class="row mx-1 mt-4">
-            <label for="text" class="col-sm-1 p-0">Text:</label>
+            <label for="text" class="col-sm-3 p-0">type="text"</label>
             <input type="text" class="col-sm-3"></input>
         </div>   
         <div class="row mx-1 mt-3">
-            <label for="tel" class="col-sm-1 p-0">tel:</label>
+            <label for="tel" class="col-sm-3 p-0">type="tel"</label>
             <input type="tel" class="col-sm-3"></input>
         </div>   
         <div class="row mx-1 mt-3">
-            <label for="url" class="col-sm-1 p-0">url:</label>
+            <label for="url" class="col-sm-3 p-0">type="url"</label>
             <input type="url" class="col-sm-3"></input>
         </div>   
         <div class="row mx-1 mt-3">
-            <label for="email" class="col-sm-1 p-0">email:</label>
+            <label for="email" class="col-sm-3 p-0">type="email"</label>
             <input type="email" class="col-sm-3"></input>
         </div>   
         <div class="row mx-1 mt-3">
-            <label for="zipcode" class="col-sm-1 p-0">Text:</label>
+            <label for="zipcode" class="col-sm-3 p-0">type="text" pattern="[0-9]*"</label>
             <input type="text" pattern="[0-9]*" class="col-sm-3"></input>
+        </div>  
+        <div class="row mx-1 mt-3">
+            <label for="zipcode" class="col-sm-3 p-0">type="search"</label>
+            <input type="search" pattern="[0-9]*" class="col-sm-3"></input>
+        </div>    
+        <div class="row mx-1 mt-3">
+            <input type="checkbox" class="col-1"></input>
+            <label for="checkbox" class="col-1">type="checkbox"</label>
         </div>   
     </div>
+
+    <div class="container-xl my-5 px-3">
+        <h2>Inputmode Test</h2>
+        <p>input的type都是"text"，改變inputmode</p>
+        <div class="row mx-1 mt-4">
+            <label for="text" class="col-sm-3 p-0">inputmode="none"</label>
+            <input type="text" class="col-sm-3" inputmode="none"></input>
+        </div>   
+        <div class="row mx-1 mt-4">
+            <label for="text" class="col-sm-3 p-0">inputmode="numeric"</label>
+            <input type="text" class="col-sm-3" inputmode="numeric"></input>
+        </div>   
+        <div class="row mx-1 mt-4">
+            <label for="text" class="col-sm-3 p-0">inputmode="tel"</label>
+            <input type="text" class="col-sm-3" inputmode="tel"></input>
+        </div>   
+        <div class="row mx-1 mt-4">
+            <label for="text" class="col-sm-3 p-0">inputmode="decimal"</label>
+            <input type="text" class="col-sm-3" inputmode="decimal"></input>
+        </div>   
+        <div class="row mx-1 mt-4">
+            <label for="text" class="col-sm-3 p-0">inputmode="email"</label>
+            <input type="text" class="col-sm-3" inputmode="email"></input>
+        </div>   
+        <div class="row mx-1 mt-4">
+            <label for="text" class="col-sm-3 p-0">inputmode="url"</label>
+            <input type="text" class="col-sm-3" inputmode="url"></input>
+        </div>   
+        <div class="row mx-1 mt-4">
+            <label for="text" class="col-sm-3 p-0">inputmode="search"</label>
+                <input type="text" class="col-sm-3" inputmode="search"></input>
+        </div>   
+    </div>
+
+    <div class="container-xl my-5 px-3">
+        <h2>Refference</h2>
+        <ul class="p-3 py-0">
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">input type - MDN</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">input inputmode - MDN</a></li>
+        <li><a href="https://css-tricks.com/everything-you-ever-wanted-to-know-about-inputmode/">Everything You Ever Wanted to Know About inputmode</a></li>
+        <li><a href="https://caniuse.com/input-inputmode">Can I Use</a></li>
+        </ul>
+    </div>
+
 </body>
 
 </html>
