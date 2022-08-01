@@ -1,0 +1,23 @@
+section.cv-banner {
+    margin-top: 50px;
+}
+section.cv-banner div.cv-banner--word {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 120px;
+}
+
+section.cv-banner h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 200;
+}
+section.cv-banner p {
+    color: #fff;
+    font-weight: 100;
+}
+
+section.cv-banner img {
+    width: 100%;
+}
