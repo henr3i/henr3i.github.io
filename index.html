@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
   <meta charset="UTF-8">
@@ -14,8 +14,10 @@
   <link type="text/css" rel="stylesheet" href="css/base.css">
   <link type="text/css" rel="stylesheet" href="css/mobile-menu.css">
   <link type="text/css" rel="stylesheet" href="css/index-Banner.css">
+  <link type="text/css" rel="stylesheet" href="css/filter.css">
   <!-- imported JS -->
-  <script type="text/javascript" src="/Javascript/jquery-3.6.js"></script>
+  <script type="text/javascript" src="Javascript/jquery-3.6.js"></script>
+  <script src="Javascript/filter.js"></script>
 </head>
 
 <body>
@@ -43,7 +45,7 @@
   <!-- index banner (done) -->
   <section class="index-banner container">
     <div class="row justify-content-center align-items-center pb-5 pt-3 pt-md-5">
-      <div class="index-banner--img col-md-4 mt-4 mb-4">
+      <div class="index-banner--img col-md-4 mb-5 mt-4 mb-4">
         <img src="/img/index/aki-head-sticker.png" alt="">
       </div>
       <div class="index-banner--word col-md-8 pl-md-5">
@@ -53,15 +55,175 @@
     </div>
   </section>
 
-  
-  <!-- content -->
-  <div class="container"> <img src="https://www.apple.com/v/iphone/home/bi/images/overview/why-iphone/ios15_banner__dw5dqawzsuoi_small_2x.jpg" alt=""/>
-    <h2>Thin. Light. Epic.</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas recusandae ullam repellat, soluta, reprehenderit suscipit reiciendis minus ratione alias dolor eveniet rerum.</p><img src="https://www.apple.com/v/iphone/home/bi/images/overview/hero/iphone_13_hero__c7g09yt0mjcm_small_2x.png" alt=""/>
-    <p> Consectetur adipisicing elit. Est earum dicta officiis ratione qui non perspiciatis necessitatibus laborum culpa ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste explicabo laborum non vel, aperiam, nemo esse harum officiis, temporibus quae, delectus dolorem laboriosam eligendi exercitationem aliquam eveniet autem facilis? Iure pariatur iusto ipsum aut, accusantium rerum. Ipsum officiis voluptatibus assumenda placeat obcaecati. Voluptas explicabo optio repellendus minima sunt, ducimus suscipit, labore ratione eum officia molestias!</p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet quidem magnam aut corporis voluptate! Et similique iste, molestiae illo nemo adipisci molestias, iure accusantium, sit expedita fugiat aliquam dolore! Odit perferendis, earum quaerat inventore ut error placeat sunt dignissimos dicta.</p>
-    <p>測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試</p>
+<!-- filter -->
+<section>
+  <!-- top-filter -->
+  <div class="filters py-5 px-3 mb-5">
+    <div class="container py-4 px-4 px-md-5">
+      
+        <div class="top-filters row mb-4">
+          <p class="col-md-2 col-4">寵物友善</p>
+          <div class="wrap-btn option-set pl-md-3">
+            <a class="option-set" href="#" data-filter-value=".pet-friendly">
+              <div class="wrap-btn"><div class="btn"></div></div>
+            </a>
+          </div>
+        </div>
+      
+      <div class="filter-columns">
+        <div class="filter-column row mb-3">
+          <p class="filter-title col-md-2 mb-3">縣市</p>
+          <div class="filter option-set row px-4" data-filter-group="location">
+            <a href="#" data-filter-value="" class="selected px-3 py-1 mr-2 mb-3">All</a>
+            <a href="#" data-filter-value=".taipei" class="px-3 py-1 mr-2 mb-3">台北</a>
+            <a href="#" data-filter-value=".newTaipei" class="px-3 py-1 mr-2 mb-3">新北</a>
+            <a href="#" data-filter-value=".hsinchu" class="px-3 py-1 mr-2 mb-3">新竹</a>
+            <a href="#" data-filter-value=".taichung" class="px-3 py-1 mr-2 mb-3">台中</a>
+          </div>
+        </div>
+        <div class="filter-column row">
+          <p class="filter-title col-md-2 mb-3">類型</p>
+          <div class="filter option-set row px-4" data-filter-group="type">
+            <a href="#" data-filter-value="" class="selected px-3 py-1 mr-2 mb-3">All</a>
+            <a href="#" data-filter-value=".food" class="px-3 py-1 mr-2 mb-3">美食</a>
+            <a href="#" data-filter-value=".spot" class="px-3 py-1 mr-2 mb-3">景點</a>
+            <a href="#" data-filter-value=".mountain" class="px-3 py-1 mr-2 mb-3">登山</a>
+            <a href="#" data-filter-value=".camping" class="px-3 py-1 mr-2 mb-3">露營</a>
+            <a href="#" data-filter-value=".hotel" class="px-3 py-1 mr-2 mb-3">住宿</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- item -->
+  <div class="container">
+    <div class="list row justify-content-around align-items-start">
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item pet-friendly taipei food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">金烤盃</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <div class="tags row">
+          <span>寵物友善</span>
+          <span>台北</span>
+          <span>美食</span>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item pet-friendly taipei food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">父母</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>寵物友善</span>
+          <span>台北</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item pet-friendly taipei food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">沐樂咖啡</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>寵物友善</span>
+          <span>台北</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item pet-friendly taipei food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">畊 PLOW Yunong</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>寵物友善</span>
+          <span>台北</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item taipei food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">純發魯肉飯</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>台北</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item taipei food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">兄弟鹹酥雞</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>台北</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item pet-friendly taipei food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">福旺餐館 Food-Wong Cafe</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>寵物友善</span>
+          <span>台北</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item  pet-friendly newTaipei food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">公雞咖啡</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>寵物友善</span>
+          <span>新北</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item newTaipei food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">Gino Pizza Napoletana</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>新北</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item hsinchu food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">永福胡椒豬肚雞</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>新竹</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-5 py-md-4 item pet-friendly taichung food">
+        <img class="mb-3" src="https://picsum.photos/600/400" alt="">
+        <h2 class="mb-1">踏踏地球 Ta Ta Earth</h2>
+        <p class="mb-4">描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊描述放在這邊。</p>
+        <p class="tags row">
+          <span>寵物友善</span>
+          <span>台中</span>
+          <span>美食</span>
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
 
 
   <!-- JS: menu (done) -->
@@ -75,6 +237,7 @@
           }
       }());
   </script>
+  
 </body>
 
 </html>
