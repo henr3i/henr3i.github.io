@@ -86,7 +86,7 @@ transform: translate(21px);
 .list .item .tags span {
   padding: 0.25rem 1rem;
   margin-right: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border-radius: 25px;
   background: #ffffff;
   box-shadow:  5px 5px 5px #d0d0d2,
