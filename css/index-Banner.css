@@ -29,7 +29,5 @@ section.index-banner div.index-banner--word h1 {
 section.index-banner div.index-banner--word p {
     font-weight: 300;
     text-align: center;
-}
-
-@media (min-width: 768px) {
+    line-height: 28px;
 }

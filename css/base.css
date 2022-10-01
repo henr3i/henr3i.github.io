@@ -325,3 +325,24 @@ template {
 [hidden] {
   display: none !important;
 }
+
+ol,ul { 
+  list-style:none; 
+  padding: 0;
+  } 
+
+.dotList {
+  padding-left: 1rem;
+}
+
+.dotList li::before {
+  content: "•";
+  color: #1C1C1E;
+  display: inline-block;
+  text-indent: -1em;
+}
+
+.numList {
+  list-style: decimal;
+  padding-left: 1rem;
+}
