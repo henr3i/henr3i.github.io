@@ -49,14 +49,37 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   letter-spacing: 1px;
   font-weight: unset;
 }
 
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 1.4rem;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
 p {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 abbr[title],

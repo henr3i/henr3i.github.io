@@ -211,3 +211,38 @@ nav.menu-opened .icon.icon-bag {
     padding: 67px 4% 0;
     text-align: justify;
 }
+
+/* sns icon */
+.sns-icon a {
+    width: 16px !important;
+    margin: 8px 16px 0;
+}
+nav ul.menu li.menu-item.sns-icon {
+    border-bottom: none
+}
+.sns-icon-pc {
+    display: none;
+}
+@media (min-width: 768px) {
+    .sns-icon {
+        display: none;
+    }
+    .sns-icon-pc {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 50px;
+    }
+    .sns-icon-pc a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        line-height: 50PX;
+        font-weight: 200;
+        margin: 0 12px;
+    }
+    .sns-icon-pc a:hover {
+        opacity: 0.6;
+        transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);    
+    }
+}
