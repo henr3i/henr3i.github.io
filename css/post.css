@@ -159,4 +159,10 @@ section.post {
     font-weight: 100;
     margin-bottom: 2.5rem;
 }
-  
+
+@media (min-width: 768px) {
+    .more-post .col-md-5 {
+        flex: 0 0 46%;
+        max-width: 46%;
+    }
+}
