@@ -41,6 +41,17 @@ section.post {
     padding-left: 15px;
 }
 
+.post article a{
+    border-bottom: solid 1px #1C1C1E;
+    font-weight: 400;
+    transition: opacity 0.5s;
+}
+
+.post article a:hover{
+    opacity: 0.7;
+    transition: opacity 0.5s;
+}
+
 .post article>img {
     width: 100%;
     margin-right: auto;
