@@ -58,7 +58,8 @@ section.post {
     margin-left: auto;
     padding: 0;
   }
-  @media (min-width: 576px) {
+
+@media (min-width: 576px) {
     .post {
       max-width: 540px;
     }
@@ -66,8 +67,9 @@ section.post {
         padding-right: 15px;
         padding-left: 15px;    
       }    
-  }
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
     .post {
       max-width: 720px;
     }
@@ -78,7 +80,7 @@ section.post {
         padding-right: 15px;
         padding-left: 15px;    
       }    
-  }
+}
 
 /* post info */
 .post-info {
