@@ -82,6 +82,12 @@ section.post {
       }    
 }
 
+h1 span {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #d2d2d7;
+}
+
 /* post info */
 .post-info {
     width: 90%;
