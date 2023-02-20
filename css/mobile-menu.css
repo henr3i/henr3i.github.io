@@ -206,6 +206,9 @@ nav.menu-opened ul.menu li.menu-item a {
         border: none;
         white-space: nowrap;
     }
+    nav ul.menu li.menu-item a {
+        pointer-events: unset;
+    }
 }
 
 
