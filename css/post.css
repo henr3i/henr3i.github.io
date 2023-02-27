@@ -52,11 +52,16 @@ section.post {
     transition: opacity 0.5s;
 }
 
-.post article>img {
+.post article>img, .post article>figure>img {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
     padding: 0;
+  }
+
+  .post article figure {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 
 @media (min-width: 576px) {
@@ -87,6 +92,13 @@ h1 span {
     padding: 0.5rem;
     border-bottom: 1px solid #d2d2d7;
 }
+
+.post article hr {
+    width: 10%;
+    margin: 48px auto;
+}
+
+
 
 /* post info */
 .post-info {
