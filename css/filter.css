@@ -105,3 +105,16 @@ a.item:hover {
   opacity: 0.7;
   transition: opacity 0.5s;
 }
+
+a.item.link h2 {
+  display: inline-block;
+}
+
+a.item.link i {
+  display: inline-block;
+  position: relative;
+  bottom: 4px;
+  left: 20px;
+  color: #6e6e73;
+  font-size: 14px;
+}

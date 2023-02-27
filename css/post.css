@@ -198,3 +198,7 @@ h1 span {
         max-width: 46%;
     }
 }
+
+.post article .more-post a{
+    border-bottom: none;
+}
