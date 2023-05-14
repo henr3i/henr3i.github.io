@@ -367,6 +367,22 @@
           }
       }());
   </script>
+
+  <!-- JS: banner (done) -->
+  <script>
+    $(document).ready(function() {
+      var rotation = 0;
+      $('.index-banner--img img').click(function() {
+        if (rotation === 0) {
+          rotation += 10;
+        } else if (rotation === 10) {
+          rotation -= 10;
+        }
+        // $(this).css('transform', 'rotate(' + rotation + 'deg)');
+        $(this).animate({ rotate: rotation + 'deg' }, 'slow');
+      });
+      });
+  </script>
   
 </body>
 
