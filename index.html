@@ -15,7 +15,7 @@
   <meta property="og:description" content="推薦台灣各地的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。讓阿奇帶你規劃質感滿分的寵物友善旅行！">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.akiwoofwoof.com">
-  <meta property="og:image" content="/img/index/aki-head-sticker.png">
+  <meta property="og:image" content="https://www.akiwoofwoof.com/img/index/og-image-index.jpg">
   <!-- imported CSS -->
   <link type="text/css" rel="stylesheet" href="css/normalize.css">
   <link type="text/css" rel="stylesheet" href="css/grid.css">
@@ -73,10 +73,10 @@
     <!-- mobile & PC -->
     <ul class="menu row">
       <li class="menu-item icon-desktop col-12"><a href="/">🐶 akiwoofwoof</a></li>
-      <li class="menu-item col-12"><a href="#">美食</a></li>
-      <li class="menu-item col-12"><a href="#">景點</a></li>
-      <li class="menu-item col-12"><a href="#">住宿</a></li>
-      <li class="menu-item col-12"><a href="#">露營</a></li>
+      <li class="menu-item col-12"><a href="https://www.akiwoofwoof.com/?type=food">美食</a></li>
+      <li class="menu-item col-12"><a href="https://www.akiwoofwoof.com/?type=spot">景點</a></li>
+      <li class="menu-item col-12"><a href="https://www.akiwoofwoof.com/?type=hotel">住宿</a></li>
+      <li class="menu-item col-12"><a href="https://www.akiwoofwoof.com/?type=camping">露營</a></li>
       <li class="menu-item col-12 sns-icon">
         <div class="row justify-content-center">
           <a href="https://www.instagram.com/aki_woofwoof/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -405,7 +405,45 @@
     let dataFilterGroupValue = currentUrl.split('?')[1].split('=')[1];
     if (dataFilterGroup && dataFilterGroupValue) {
       $('div.filters div.filter[data-filter-group="' + dataFilterGroup + '"] a[data-filter-value=".' + dataFilterGroupValue + '"]').click();
+      if (dataFilterGroup === 'type' && dataFilterGroupValue === 'food') {
+        $('div.index-banner--word h1').text('寵物餐廳推薦')
+        $('div.index-banner--word p').text('推薦台灣各地的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷')
+        $('title').text('寵物餐廳推薦 - 阿奇歷險記');
+        $('meta[name="description"]').attr('content', '推薦台灣各地的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷');
+        $('link[rel="canonical"]').attr('href', 'https://www.akiwoofwoof.com?type=food');
+        $('meta[property="og:title"]').attr('content', '寵物餐廳推薦 - 阿奇歷險記');
+        $('meta[property="og:description"]').attr('content', '推薦台灣各地的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷');
+        $('meta[property="og:url"]').attr('content', 'https://www.akiwoofwoof.com?type=food');
+      } else if (dataFilterGroup === 'type' && dataFilterGroupValue === 'spot') {
+        $('div.index-banner--word h1').text('寵物景點推薦')
+        $('div.index-banner--word p').text('推薦台灣各地的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO')
+        $('title').text('寵物景點推薦 - 阿奇歷險記');
+        $('meta[name="description"]').attr('content', '推薦台灣各地的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO');
+        $('link[rel="canonical"]').attr('href', 'https://www.akiwoofwoof.com?type=spot');
+        $('meta[property="og:title"]').attr('content', '寵物景點推薦 - 阿奇歷險記');
+        $('meta[property="og:description"]').attr('content', '推薦台灣各地的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO');
+        $('meta[property="og:url"]').attr('content', 'https://www.akiwoofwoof.com?type=spot');
+      } else if (dataFilterGroup === 'type' && dataFilterGroupValue === 'hotel') {
+        $('div.index-banner--word h1').text('寵物飯店/寵物友善民宿')
+        $('div.index-banner--word p').text('推薦台灣各地的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔')
+        $('title').text('寵物飯店/寵物友善民宿 - 阿奇歷險記');
+        $('meta[name="description"]').attr('content', '推薦台灣各地的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔');
+        $('link[rel="canonical"]').attr('href', 'https://www.akiwoofwoof.com?type=hotel');
+        $('meta[property="og:title"]').attr('content', '寵物飯店/寵物友善民宿 - 阿奇歷險記');
+        $('meta[property="og:description"]').attr('content', '推薦台灣各地的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔');
+        $('meta[property="og:url"]').attr('content', 'https://www.akiwoofwoof.com?type=hotel');
+      } else if (dataFilterGroup === 'type' && dataFilterGroupValue === 'camping') {
+        $('div.index-banner--word h1').text('寵物友善露營地推薦')
+        $('div.index-banner--word p').text('露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔')
+        $('title').text('寵物友善露營地推薦 - 阿奇歷險記');
+        $('meta[name="description"]').attr('content', '露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔');
+        $('link[rel="canonical"]').attr('href', 'https://www.akiwoofwoof.com?type=camping');
+        $('meta[property="og:title"]').attr('content', '寵物友善露營地推薦 - 阿奇歷險記');
+        $('meta[property="og:description"]').attr('content', '露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔');
+        $('meta[property="og:url"]').attr('content', 'https://www.akiwoofwoof.com?type=camping');
+      }
     }
+
   });  
   </script>
 </body>
