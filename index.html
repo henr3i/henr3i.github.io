@@ -399,12 +399,14 @@
   
   <!-- JS: url parameter filter -->
   <script>
+  $(document).ready(function() {
     let currentUrl = window.location.href;
     let dataFilterGroup = currentUrl.split('?')[1].split('=')[0];
     let dataFilterGroupValue = currentUrl.split('?')[1].split('=')[1];
     if (dataFilterGroup && dataFilterGroupValue) {
       $('div.filters div.filter[data-filter-group="' + dataFilterGroup + '"] a[data-filter-value=".' + dataFilterGroupValue + '"]').click();
     }
+  });  
   </script>
 </body>
 
