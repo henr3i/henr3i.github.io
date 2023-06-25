@@ -8,11 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>阿奇歷險記 - 寵物友善餐廳、住宿、景點推薦</title>
   <meta name="description" content="推薦台灣各地的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。讓阿奇帶你規劃質感滿分的寵物友善旅行！">
+  <link rel="canonical" href="https://www.akiwoofwoof.com" />
+  <link rel="icon" type="image/x-icon" href="https://www.akiwoofwoof.com/img/all/faviocn-aki.ico">
+  <!-- og -->
   <meta property="og:title" content="阿奇歷險記">
+  <meta property="og:description" content="推薦台灣各地的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。讓阿奇帶你規劃質感滿分的寵物友善旅行！">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.akiwoofwoof.com/">
+  <meta property="og:url" content="https://www.akiwoofwoof.com">
   <meta property="og:image" content="/img/index/aki-head-sticker.png">
-  <link rel="icon" type="image/x-icon" href="img/all/faviocn-aki.ico">
   <!-- imported CSS -->
   <link type="text/css" rel="stylesheet" href="css/normalize.css">
   <link type="text/css" rel="stylesheet" href="css/grid.css">
@@ -366,8 +369,6 @@
     </div>
   </section>
 
-
-
   <!-- JS: menu (done) -->
   <script>
       (function(){
@@ -396,6 +397,15 @@
       });
   </script>
   
+  <!-- JS: url parameter filter -->
+  <script>
+    let currentUrl = window.location.href;
+    if (currentUrl.includes('?')) {
+    let dataFilterGroup = currentUrl.split('?')[1].split('=')[0];
+    let dataFilterGroupValue = currentUrl.split('?')[1].split('=')[1];
+    $('div.filters div.filter[data-filter-group="' + dataFilterGroup + '"] a[data-filter-value=".' + dataFilterGroupValue + '"]').click();
+    }
+  </script>
 </body>
 
 </html>
