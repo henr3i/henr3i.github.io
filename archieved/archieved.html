@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <!-- meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>archieved</title>
+  <meta name="robots" content="noindex">
+    <!-- imported CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="../css/grid.css">
+    <link type="text/css" rel="stylesheet" href="../css/spacing.css">
+    <!-- owned CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/base.css">
+    <link type="text/css" rel="stylesheet" href="../css/mobile-menu.css">
+    <link type="text/css" rel="stylesheet" href="../css/filter.css">
+    <link type="text/css" rel="stylesheet" href="../css/bottom.css">
+    <!-- imported JS -->
+    <script type="text/javascript" src="../Javascript/jquery-3.6.js"></script>
+    <script src="https://kit.fontawesome.com/157d2a865e.js" crossorigin="anonymous"></script>
+    <script src="../Javascript/filter.js"></script>  
+</head>
+
+<body>
+  <!-- index banner: 阿奇大頭-->
+    <section class="index-banner container">
+        <div class="row justify-content-center align-items-center pb-5 pt-3 pt-md-5">
+        <div class="index-banner--img col-md-4 mb-5 mt-4 mb-4">
+            <img src="/img/index/aki-head-sticker.png" alt="">
+        </div>
+        <div class="index-banner--word col-md-8 pl-md-5 px-5">
+            <h1 class="mb-2 text-md-left">阿奇歷險記</h1>
+            <p class="text-md-left">讓阿奇帶你規劃質感滿分的寵物友善旅行！<br>推薦台灣各地的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。</p>
+        </div>  
+        </div>
+    </section>
+    <!-- CSS -->
+    <style>
+        section.index-banner {
+        margin-top: 50px;
+    }
+    @media (min-width: 768px) {
+        section.index-banner {
+            margin-bottom: 50px;
+        }
+    }
+
+    section.index-banner div.index-banner--img {
+        max-width: 300px;
+    }
+
+    /* section.index-banner div.index-banner--img img {
+        -webkit-transition: -webkit-transform .8s ease-in-out;
+        transition: transform .5s ease-in-out;  
+    }
+
+    section.index-banner div.index-banner--img img:hover {
+        transform:rotate(5deg);
+        -webkit-transform:rotate(5deg);
+    } */
+
+    section.index-banner div.index-banner--word h1 {
+        font-size: 2.2rem;
+        font-weight: 400;
+        text-align: center;
+    }
+    section.index-banner div.index-banner--word p {
+        font-weight: 300;
+        text-align: center;
+        line-height: 28px;
+    }
+    </style>
+    <!-- JS -->
+    <script>
+        $(document).ready(function() {
+        var rotation = 0;
+        $('.index-banner--img img').click(function() {
+            if (rotation === 0) {
+            rotation += 10;
+            } else if (rotation === 10) {
+            rotation -= 10;
+            }
+            // $(this).css('transform', 'rotate(' + rotation + 'deg)');
+            $(this).animate({ rotate: rotation + 'deg' }, 'slow');
+        });
+        });
+    </script>
+</body>
+
+</html>
