@@ -190,7 +190,7 @@ nav.menu-opened ul.menu li.menu-item a {
         position: relative;
     }
     nav ul.menu {
-        padding: 0;
+        padding: 0 60px;
         margin: 0 auto;
         max-width: 996px;
         justify-content: space-evenly;
