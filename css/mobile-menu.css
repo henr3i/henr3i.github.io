@@ -1,255 +1,258 @@
 nav {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    height: 50px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    overflow: hidden;
-    transition: all 0.5s ease-out, background 1s ease-out;
-    transition-delay: 0.2s;
-    z-index: 1;
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background: rgba(54, 54, 56, 1);
+  overflow: hidden;
+  transition: all 0.5s ease-out, background 1s ease-out;
+  transition-delay: 0.2s;
+  z-index: 1;
 }
 
 /* 漢堡 */
 nav .burger-container {
-    position: relative;
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    transform: rotate(0deg);
-    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    z-index: 100;
+  position: relative;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 100;
 }
 nav .burger-container #burger {
-    width: 18px;
-    height: 8px;
-    position: relative;
-    display: block;
-    margin: -4px auto 0;
-    top: 50%;
+  width: 18px;
+  height: 8px;
+  position: relative;
+  display: block;
+  margin: -4px auto 0;
+  top: 50%;
 }
 nav .burger-container #burger .bar {
-    width: 100%;
-    height: 1px;
-    display: block;
-    position: relative;
-    background: #fff;
-    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    transition-delay: 0s;
+  width: 100%;
+  height: 1px;
+  display: block;
+  position: relative;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
 }
 nav .burger-container #burger .bar.topBar {
-    transform: translateY(0px) rotate(0deg);
+  transform: translateY(0px) rotate(0deg);
 }
 nav .burger-container #burger .bar.btmBar {
-    transform: translateY(6px) rotate(0deg);
+  transform: translateY(6px) rotate(0deg);
 }
 
 /* icon */
 nav .icon {
-    display: inline-block;
-    position: absolute;
-    height: 100%;
-    line-height: 50px;
-    height: 50px;
-    text-align: center;
-    color: #fff;
-    font-size: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 nav .icon-desktop {
-    display: none;
+  display: none;
 }
-nav .icon a,  nav .icon-desktop a{
-    color: #fff;
+nav .icon a,
+nav .icon-desktop a {
+  color: #fff;
 }
-nav .icon a,  nav:hover .icon-desktop a:hover{
-    text-decoration: none;
-    opacity: 1 !important;
+nav .icon a,
+nav:hover .icon-desktop a:hover {
+  text-decoration: none;
+  opacity: 1 !important;
 }
-
 
 /* menu */
 nav ul.menu {
-    position: relative;
-    padding: 0px 48px 0;
-    list-style: none;
+  position: relative;
+  padding: 0px 48px 0;
+  list-style: none;
 }
 nav ul.menu li.menu-item {
-    border-bottom: 1px solid #333;
-    margin-top: 5px;
-    transform: scale(1.15) translateY(-30px);
-    opacity: 0;
-    transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  border-bottom: 1px solid #333;
+  margin-top: 5px;
+  transform: scale(1.15) translateY(-30px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99),
+    opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
 nav ul.menu li.menu-item:nth-child(1) {
-    transition-delay: 0.49s;
+  transition-delay: 0.49s;
 }
 nav ul.menu li.menu-item:nth-child(2) {
-    transition-delay: 0.42s;
+  transition-delay: 0.42s;
 }
 nav ul.menu li.menu-item:nth-child(3) {
-    transition-delay: 0.35s;
+  transition-delay: 0.35s;
 }
 nav ul.menu li.menu-item:nth-child(4) {
-    transition-delay: 0.28s;
+  transition-delay: 0.28s;
 }
 nav ul.menu li.menu-item:nth-child(5) {
-    transition-delay: 0.21s;
+  transition-delay: 0.21s;
 }
 nav ul.menu li.menu-item:nth-child(6) {
-    transition-delay: 0.14s;
+  transition-delay: 0.14s;
 }
 nav ul.menu li.menu-item:nth-child(7) {
-    transition-delay: 0.07s;
+  transition-delay: 0.07s;
 }
 nav ul.menu li.menu-item a {
-    display: block;
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    line-height: 50PX;
-    font-weight: 200;
-    width: 100%;
-    transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    pointer-events: none;
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 50px;
+  font-weight: 200;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99),
+    opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  pointer-events: none;
 }
 nav ul.menu li.menu-item a:hover {
-    opacity: 0.6;
-    transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  opacity: 0.6;
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99),
+    opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
 
 /* mobile menu opened */
 nav.menu-opened {
-    height: 100%;
-    background-color: #000;
-    transition: all 0.3s ease-in, background 0.5s ease-in;
-    transition-delay: 0.25s;
+  height: 100%;
+  background-color: #000;
+  transition: all 0.3s ease-in, background 0.5s ease-in;
+  transition-delay: 0.25s;
 }
 nav.menu-opened .burger-container {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 nav.menu-opened .burger-container #burger .bar {
-    transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    transition-delay: 0.2s;
+  transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0.2s;
 }
 nav.menu-opened .burger-container #burger .bar.topBar {
-    transform: translateY(4px) rotate(45deg);
+  transform: translateY(4px) rotate(45deg);
 }
 nav.menu-opened .burger-container #burger .bar.btmBar {
-    transform: translateY(3px) rotate(-45deg);
+  transform: translateY(3px) rotate(-45deg);
 }
 nav.menu-opened ul.menu li.menu-item {
-    transform: scale(1) translateY(0px);
-    opacity: 1;
+  transform: scale(1) translateY(0px);
+  opacity: 1;
 }
 nav.menu-opened ul.menu li.menu-item:nth-child(1) {
-    transition-delay: 0.27s;
+  transition-delay: 0.27s;
 }
 nav.menu-opened ul.menu li.menu-item:nth-child(2) {
-    transition-delay: 0.34s;
+  transition-delay: 0.34s;
 }
 nav.menu-opened ul.menu li.menu-item:nth-child(3) {
-    transition-delay: 0.41s;
+  transition-delay: 0.41s;
 }
 nav.menu-opened ul.menu li.menu-item:nth-child(4) {
-    transition-delay: 0.48s;
+  transition-delay: 0.48s;
 }
 nav.menu-opened ul.menu li.menu-item:nth-child(5) {
-    transition-delay: 0.55s;
+  transition-delay: 0.55s;
 }
 nav.menu-opened ul.menu li.menu-item:nth-child(6) {
-    transition-delay: 0.62s;
+  transition-delay: 0.62s;
 }
 nav.menu-opened ul.menu li.menu-item:nth-child(7) {
-    transition-delay: 0.69s;
+  transition-delay: 0.69s;
 }
 nav.menu-opened ul.menu li.menu-item:nth-child(8) {
-    transition-delay: 0.76s;
+  transition-delay: 0.76s;
 }
 nav.menu-opened .icon.icon-bag {
-    transform: translateX(75px);
-    transition-delay: 0.3s;
+  transform: translateX(75px);
+  transition-delay: 0.3s;
 }
 nav.menu-opened ul.menu li.menu-item a {
-    pointer-events: unset;
+  pointer-events: unset;
 }
 
 /* Desktop */
 /* icon */
 @media (min-width: 768px) {
-    nav .icon {
-        left: 0%;
-        transform: translateX(0);
-        position: relative;
-    }
-    nav ul.menu {
-        padding: 0 60px;
-        margin: 0 auto;
-        max-width: 996px;
-        justify-content: space-evenly;
-    }
-    nav .icon-desktop {
-        display: list-item;
-    }
-    nav ul.menu li.menu-item {
-        opacity: 1;
-        transform: none;
-        margin: 0;
-        flex: 0 0 0;
-        border: none;
-        white-space: nowrap;
-    }
-    nav ul.menu li.menu-item a {
-        pointer-events: unset;
-    }
+  nav .icon {
+    left: 0%;
+    transform: translateX(0);
+    position: relative;
+  }
+  nav ul.menu {
+    padding: 0 60px;
+    margin: 0 auto;
+    max-width: 996px;
+    justify-content: space-evenly;
+  }
+  nav .icon-desktop {
+    display: list-item;
+  }
+  nav ul.menu li.menu-item {
+    opacity: 1;
+    transform: none;
+    margin: 0;
+    flex: 0 0 0;
+    border: none;
+    white-space: nowrap;
+  }
+  nav ul.menu li.menu-item a {
+    pointer-events: unset;
+  }
 }
-
-
 
 /* main content */
 .content {
-    padding: 67px 4% 0;
-    text-align: justify;
+  padding: 67px 4% 0;
+  text-align: justify;
 }
 
 /* sns icon */
 .sns-icon a {
-    width: 16px !important;
-    margin: 8px 16px 0;
+  width: 16px !important;
+  margin: 8px 16px 0;
 }
 nav ul.menu li.menu-item.sns-icon {
-    border-bottom: none
+  border-bottom: none;
 }
 .sns-icon-pc {
-    display: none;
+  display: none;
 }
 @media (min-width: 768px) {
-    .sns-icon {
-        display: none;
-    }
-    .sns-icon-pc {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 50px;
-    }
-    .sns-icon-pc a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1rem;
-        line-height: 50PX;
-        font-weight: 200;
-        margin: 0 12px;
-    }
-    .sns-icon-pc a:hover {
-        opacity: 0.6;
-        transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);    
-    }
+  .sns-icon {
+    display: none;
+  }
+  .sns-icon-pc {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 50px;
+  }
+  .sns-icon-pc a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 50px;
+    font-weight: 200;
+    margin: 0 12px;
+  }
+  .sns-icon-pc a:hover {
+    opacity: 0.6;
+    transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99),
+      opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  }
 }
