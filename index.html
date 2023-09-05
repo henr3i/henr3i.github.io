@@ -260,7 +260,7 @@
           <div class="container">
             <p>
               <span>宜蘭 | 寵物友善住宿</span><br />跑跑 -
-              有超大草地的民宿，讓狗狗盡情奔跑！
+              超大草地的民宿，讓狗狗盡情奔跑
             </p>
           </div>
         </div>
@@ -869,19 +869,22 @@
           nav.classList.toggle("menu-opened");
         };
       })();
+      // 上下滑動隱藏顯示menu
       $(document).ready(function () {
         const $header = $("nav");
         let lastScrollTop = 0;
-
         $(window).scroll(function () {
           const scrollTop = $(window).scrollTop();
-
+          console.log(scrollTop, lastScrollTop);
           if (scrollTop > lastScrollTop) {
-            // 向下滚动
-            $header.css("transform", "translateY(-100%)"); // 隐藏菜单
+            // 向下滑動
+            $header.css("transform", "translateY(-100%)"); // 隱藏menu
+          } else if (scrollTop < 50) {
+            // 在上面時
+            $header.css("transform", "translateY(0)"); // 顯示menu
           } else if (scrollTop + 10 < lastScrollTop) {
-            // 向上滚动
-            $header.css("transform", "translateY(0)"); // 显示菜单
+            // 向上滑動
+            $header.css("transform", "translateY(0)"); // 顯示menu
           }
           lastScrollTop = scrollTop;
         });
@@ -938,7 +941,7 @@
           });
 
         // 啟動輪播，每隔5秒切換一張圖片
-        setInterval(nextSlide, 5000);
+        // setInterval(nextSlide, 5000);
         // 初始顯示第一張圖片
         showSlide(currentSlide);
       });

@@ -500,16 +500,18 @@
       $(document).ready(function () {
         const $header = $("nav");
         let lastScrollTop = 0;
-
         $(window).scroll(function () {
           const scrollTop = $(window).scrollTop();
-
+          console.log(scrollTop, lastScrollTop);
           if (scrollTop > lastScrollTop) {
-            // 向下滚动
-            $header.css("transform", "translateY(-100%)"); // 隐藏菜单
+            // 向下滑動
+            $header.css("transform", "translateY(-100%)"); // 隱藏menu
+          } else if (scrollTop < 50) {
+            // 在上面時
+            $header.css("transform", "translateY(0)"); // 顯示menu
           } else if (scrollTop + 10 < lastScrollTop) {
-            // 向上滚动
-            $header.css("transform", "translateY(0)"); // 显示菜单
+            // 向上滑動
+            $header.css("transform", "translateY(0)"); // 顯示menu
           }
           lastScrollTop = scrollTop;
         });
