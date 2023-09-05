@@ -280,7 +280,7 @@
           <div class="container">
             <p>
               <span>桃園 | 寵物友善景點</span><br />羊稠森林步道 -
-              適合新手狗狗登山的步道，平緩好走、地形多樣
+              適合新手狗狗登山的步道
             </p>
           </div>
         </div>
@@ -302,8 +302,7 @@
         <div class="title">
           <div class="container">
             <p>
-              <span>苗栗 | 狗狗游泳池</span><br />GOGO WaterWorld 狗狗水世界 -
-              百萬淨水設備的乾淨狗狗游泳池
+              <span>苗栗 | 狗狗游泳池</span><br />GOGO WaterWorld - 百萬淨水設備
             </p>
           </div>
         </div>
@@ -894,6 +893,8 @@
       document.addEventListener("DOMContentLoaded", function () {
         const slides = document.querySelectorAll(".slide");
         let currentSlide = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         function showSlide(index) {
           slides.forEach((slide, i) => {
@@ -917,6 +918,25 @@
         document
           .querySelector(".next-button")
           .addEventListener("click", nextSlide);
+
+        // 滑動事件
+        document.addEventListener("touchstart", function (event) {
+          touchStartX = event.touches[0].clientX;
+        });
+
+        document
+          .querySelector(".carousel-container")
+          .addEventListener("touchend", function (event) {
+            touchEndX = event.changedTouches[0].clientX;
+
+            // 判断滑动方向
+            if (touchStartX > touchEndX) {
+              nextSlide(); // 向左
+            } else if (touchEndX > touchStartX) {
+              prevSlide(); // 向右
+            }
+          });
+
         // 啟動輪播，每隔5秒切換一張圖片
         setInterval(nextSlide, 5000);
         // 初始顯示第一張圖片
