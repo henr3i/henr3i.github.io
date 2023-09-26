@@ -680,7 +680,6 @@
         let lastScrollTop = 0;
         $(window).scroll(function () {
           const scrollTop = $(window).scrollTop();
-          console.log(scrollTop, lastScrollTop);
           if (scrollTop < 80) {
             // 在上面時
             $header.css("transform", "translateY(0)"); // 顯示menu
