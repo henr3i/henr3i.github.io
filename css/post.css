@@ -1,204 +1,198 @@
 /* post container */
 section.post {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 @media (min-width: 768px) {
-    section.post {
-        margin-bottom: 50px;
-    }
+  section.post {
+    margin-bottom: 50px;
+  }
 }
 .post {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-.post article>h1 {
-    padding-right: 15px;
-    padding-left: 15px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
-.post article>h2{
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.post article>h3{
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.post article>h4{
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.post article>h5{
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.post article>h6{
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.post article>p{
-    padding-right: 15px;
-    padding-left: 15px;
+.post article > h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
-.post article a{
-    border-bottom: solid 1px #1C1C1E;
-    font-weight: 400;
-    transition: opacity 0.5s;
+.post article a {
+  border-bottom: solid 1px #1c1c1e;
+  font-weight: 400;
+  transition: opacity 0.5s;
 }
 
-.post article a:hover{
-    opacity: 0.7;
-    transition: opacity 0.5s;
+.post article a:hover {
+  opacity: 0.7;
+  transition: opacity 0.5s;
 }
 
-.post article>img, .post article>figure>img {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0;
-  }
+.post article > img,
+.post article > figure > img {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+  margin: 1rem 0;
+}
 
-  .post article figure {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+.post article figure img {
+  margin-bottom: 0.25rem;
+}
+
+.post article figure figcaption {
+  font-size: 0.8rem;
+  text-align: center;
+}
 
 @media (min-width: 576px) {
-    .post {
-      max-width: 540px;
-    }
-    .post article>img {
-        padding-right: 15px;
-        padding-left: 15px;    
-      }    
+  .post {
+    max-width: 540px;
+  }
+  .post article > img,
+  figure {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 
 @media (min-width: 768px) {
-    .post {
-      max-width: 720px;
-    }
-    .post h1 {
-        margin-top: 1.5rem;
-    }
-    .post article>img {
-        padding-right: 15px;
-        padding-left: 15px;    
-      }    
+  .post {
+    max-width: 720px;
+  }
+  .post h1 {
+    margin-top: 1.5rem;
+  }
+  .post article > img {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 
 h1 span {
-    font-size: 0.8rem;
-    padding: 0.5rem;
-    border-bottom: 1px solid #d2d2d7;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #d2d2d7;
 }
 
 .post article hr {
-    width: 10%;
-    margin: 48px auto;
+  width: 10%;
+  margin: 48px auto;
 }
-
-
 
 /* post info */
 .post-info {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 0.8rem;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.8rem;
 }
 .post article .post-info a {
-    color: #1C1C1E;
-    border-bottom: none;
+  color: #1c1c1e;
+  border-bottom: none;
 }
 .post-info a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .post-info a:after {
-    content: '';
-    display: inline-block;
-    height: 0.8rem;
-    width: 1px;
-    margin: 0 10px;
-    background-color: #6e6e73;
+  content: "";
+  display: inline-block;
+  height: 0.8rem;
+  width: 1px;
+  margin: 0 10px;
+  background-color: #6e6e73;
 }
 
 /* spot info */
 .spot-info {
-    border-radius: 15px;
-    background: #f5f5f7;
-    margin: 3rem 15px 0;
-    padding: 1.5rem 1rem 2rem;
+  border-radius: 15px;
+  background: #f5f5f7;
+  margin: 3rem 15px 0;
+  padding: 1.5rem 1rem 2rem;
 }
 .spot-info p.spot-info--title {
-    font-size: 1.4rem;
-    margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
 }
 .spot-info p {
-    padding: 0;
+  padding: 0;
 }
-.spot-info p>span:before {
-    content: '';
-    display: inline-block;
-    height: 0.8rem;
-    width: 1px;
-    margin: 0 10px;
-    background-color: #6e6e73;
+.spot-info p > span:before {
+  content: "";
+  display: inline-block;
+  height: 0.8rem;
+  width: 1px;
+  margin: 0 10px;
+  background-color: #6e6e73;
 }
 
 /* more post */
 /* item */
 .item {
-    position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
-    border-radius: 25px;
-    border-radius: 25px;
-    background: #ffffff;
-    box-shadow:  5px 5px 8px #c2c2c2,
-                 -5px -5px 8px #ffffff;
-  }  
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  border-radius: 25px;
+  border-radius: 25px;
+  background: #ffffff;
+  box-shadow: 5px 5px 8px #c2c2c2, -5px -5px 8px #ffffff;
+}
 .list .item .tags span {
-    padding: 0.25rem 1rem;
-    margin-right: 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 25px;
-    background: #ffffff;
-    box-shadow:  5px 5px 5px #d0d0d2,
-                    -5px -5px 5px #ffffff;
-  }
-
-  /* .list {
-    width: 100%;
-  } */
+  padding: 0.25rem 1rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 25px;
+  background: #ffffff;
+  box-shadow: 5px 5px 5px #d0d0d2, -5px -5px 5px #ffffff;
+}
 
 .more-post h2 {
-    font-size: 1.4rem;
-    font-weight: 100;
-    margin-bottom: 2.5rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  margin-bottom: 2.5rem;
 }
 .more-post h2:after {
-    content: '';
-    display: inline-block;
-    height: 1.2rem;
-    width: 1px;
-    margin: 0 10px;
-    background-color: #6e6e73;
+  content: "";
+  display: inline-block;
+  height: 1.2rem;
+  width: 1px;
+  margin: 0 10px;
+  background-color: #6e6e73;
 }
 
 .more-post h3 {
-    font-size: 1.2rem;
-    font-weight: 100;
-    margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin-bottom: 2.5rem;
 }
 
 @media (min-width: 768px) {
-    .more-post .col-md-5 {
-        flex: 0 0 46%;
-        max-width: 46%;
-    }
+  .more-post .col-md-5 {
+    flex: 0 0 46%;
+    max-width: 46%;
+  }
 }
 
-.post article .more-post a{
-    border-bottom: none;
+.post article .more-post a {
+  border-bottom: none;
+}
+
+/* follow us */
+.post article .follow-us a {
+  border-bottom: none;
+  margin: 0 1.5rem;
+  padding-top: 0.25rem;
+  font-size: 1.2rem;
+}
+.post article .follow-us h2 {
+  font-size: 1.4rem;
+  font-weight: 100;
+  margin: 0 0 1rem 0;
 }

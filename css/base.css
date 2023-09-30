@@ -85,7 +85,7 @@ h2 {
 h3 {
   font-size: 1.4rem;
   margin-top: 1.4rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 h4 {
@@ -395,4 +395,17 @@ a {
 a:hover {
   color: #1c1c1e;
   text-decoration: none;
+}
+
+a.button {
+  padding: 7px 15px;
+  border-radius: 15px;
+  min-width: 30px;
+  background: #636366;
+  color: #fff;
+  /* box-shadow: 5px 5px 5px #d0d0d2, -5px -5px 5px #ffffff; */
+  display: inline-block;
+  border: none !important;
+  font-weight: 300 !important;
+  font-size: 0.9rem;
 }
