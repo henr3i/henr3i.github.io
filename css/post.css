@@ -47,6 +47,10 @@ p {
   margin-bottom: 0.25rem;
 }
 
+.post article > figure {
+  margin: 1rem 0;
+}
+
 .post article figure figcaption {
   font-size: 0.8rem;
   text-align: center;
