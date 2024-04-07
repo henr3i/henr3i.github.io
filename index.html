@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>阿奇歷險記 - 寵物友善ㄑ餐廳、住宿、景點推薦</title>
+    <title>阿奇歷險記 - 寵物友善餐廳、住宿、景點推薦</title>
     <meta
       name="description"
       content="推薦台灣各地的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。讓阿奇帶你規劃質感滿分的寵物友善旅行！"
@@ -423,9 +423,11 @@
 
       <!-- item -->
       <div class="container">
-        <div class="list row justify-content-around align-items-start">
+        <h1 class="mx-4 mb-2 text-center">阿奇歷險記</h1>
+        <p class="text-center">讓阿奇帶你規劃質感滿分的寵物友善旅行！</p>
+        <div class="list row justify-content-around align-items-start mt-5">
           <a
-            class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-3 item pet-friendly taoyuan spot link"
+            class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-3 item pet-friendly taipei spot link"
             href="/spot/mountain-tukuyue"
           >
             <h2 class="mb-3 mt-1 ml-2">土庫岳、山豬淚湖</h2>
@@ -704,131 +706,828 @@
     <!-- JS: url parameter filter -->
     <script>
       $(document).ready(function () {
+        // 把網址參數變成{}
         let currentUrl = window.location.href;
-        let dataFilterGroup = currentUrl.split("?")[1].split("=")[0];
-        let dataFilterGroupValue = currentUrl.split("?")[1].split("=")[1];
-        if (dataFilterGroup && dataFilterGroupValue) {
+        let params = currentUrl.split("?")[1].split("&");
+        let queryParams = {};
+        params.forEach((param) => {
+          let [key, value] = param.split("=");
+          queryParams[key] = value;
+        });
+        // 宣告type
+        let typeValue = queryParams["type"];
+        // 宣告location
+        let locationValue = queryParams["location"];
+        // 如果type有值的filter處理
+        if (typeValue) {
           $(
-            'div.filters div.filter[data-filter-group="' +
-              dataFilterGroup +
-              '"] a[data-filter-value=".' +
-              dataFilterGroupValue +
+            'div.filters div.filter[data-filter-group="type"] a[data-filter-value=".' +
+              typeValue +
               '"]'
           ).click();
-          if (dataFilterGroup === "type" && dataFilterGroupValue === "food") {
-            $("div.index-banner--word h1").text("寵物餐廳推薦");
-            $("div.index-banner--word p").text(
-              "推薦台灣各地的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
-            );
-            $("title").text("寵物餐廳推薦 - 阿奇歷險記");
-            $('meta[name="description"]').attr(
-              "content",
-              "推薦台灣各地的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
-            );
-            $('link[rel="canonical"]').attr(
-              "href",
-              "https://www.akiwoofwoof.com?type=food"
-            );
-            $('meta[property="og:title"]').attr(
-              "content",
-              "寵物餐廳推薦 - 阿奇歷險記"
-            );
-            $('meta[property="og:description"]').attr(
-              "content",
-              "推薦台灣各地的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
-            );
-            $('meta[property="og:url"]').attr(
-              "content",
-              "https://www.akiwoofwoof.com?type=food"
-            );
-          } else if (
-            dataFilterGroup === "type" &&
-            dataFilterGroupValue === "spot"
-          ) {
-            $("div.index-banner--word h1").text("寵物景點推薦");
-            $("div.index-banner--word p").text(
-              "推薦台灣各地的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
-            );
-            $("title").text("寵物景點推薦 - 阿奇歷險記");
-            $('meta[name="description"]').attr(
-              "content",
-              "推薦台灣各地的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
-            );
-            $('link[rel="canonical"]').attr(
-              "href",
-              "https://www.akiwoofwoof.com?type=spot"
-            );
-            $('meta[property="og:title"]').attr(
-              "content",
-              "寵物景點推薦 - 阿奇歷險記"
-            );
-            $('meta[property="og:description"]').attr(
-              "content",
-              "推薦台灣各地的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
-            );
-            $('meta[property="og:url"]').attr(
-              "content",
-              "https://www.akiwoofwoof.com?type=spot"
-            );
-          } else if (
-            dataFilterGroup === "type" &&
-            dataFilterGroupValue === "hotel"
-          ) {
-            $("div.index-banner--word h1").text("寵物飯店/寵物友善民宿");
-            $("div.index-banner--word p").text(
-              "推薦台灣各地的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
-            );
-            $("title").text("寵物飯店/寵物友善民宿 - 阿奇歷險記");
-            $('meta[name="description"]').attr(
-              "content",
-              "推薦台灣各地的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
-            );
-            $('link[rel="canonical"]').attr(
-              "href",
-              "https://www.akiwoofwoof.com?type=hotel"
-            );
-            $('meta[property="og:title"]').attr(
-              "content",
-              "寵物飯店/寵物友善民宿 - 阿奇歷險記"
-            );
-            $('meta[property="og:description"]').attr(
-              "content",
-              "推薦台灣各地的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
-            );
-            $('meta[property="og:url"]').attr(
-              "content",
-              "https://www.akiwoofwoof.com?type=hotel"
-            );
-          } else if (
-            dataFilterGroup === "type" &&
-            dataFilterGroupValue === "camping"
-          ) {
-            $("div.index-banner--word h1").text("寵物友善露營地推薦");
-            $("div.index-banner--word p").text(
-              "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
-            );
-            $("title").text("寵物友善露營地推薦 - 阿奇歷險記");
-            $('meta[name="description"]').attr(
-              "content",
-              "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
-            );
-            $('link[rel="canonical"]').attr(
-              "href",
-              "https://www.akiwoofwoof.com?type=camping"
-            );
-            $('meta[property="og:title"]').attr(
-              "content",
-              "寵物友善露營地推薦 - 阿奇歷險記"
-            );
-            $('meta[property="og:description"]').attr(
-              "content",
-              "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
-            );
-            $('meta[property="og:url"]').attr(
-              "content",
-              "https://www.akiwoofwoof.com?type=camping"
-            );
+        } // 如果location有值的filter處理
+        if (locationValue) {
+          $(
+            'div.filters div.filter[data-filter-group="location"] a[data-filter-value=".' +
+              locationValue +
+              '"]'
+          ).click();
+        }
+        // 處理meta
+        if (typeValue === "food") {
+          // type = food
+          switch (locationValue) {
+            // location = taipei
+            case "taipei":
+              $("body > section.mb-5 > div.container > h1").text(
+                "台北寵物餐廳推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦台北的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $("title").text("台北寵物餐廳推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦台北的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=food&location=taipei"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "台北寵物餐廳推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦台北的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=food&location=taipei"
+              );
+              break;
+            // location = taoyuan
+            case "taoyuan":
+              $("body > section.mb-5 > div.container > h1").text(
+                "桃園寵物餐廳推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "目前還沒有桃園寵物餐廳推薦，請先看看別的縣市。也歡迎到 Instagram 訊息推薦我們！"
+              );
+              // $("body > section.mb-5 > div.container > p").text(
+              //   "推薦桃園的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              // );
+              $("title").text("桃園寵物餐廳推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦桃園的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=food&location=taoyuan"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "桃園寵物餐廳推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦桃園的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=food&location=taoyuan"
+              );
+              break;
+            // location = miaoli
+            case "miaoli":
+              $("body > section.mb-5 > div.container > h1").text(
+                "苗栗寵物餐廳推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦苗栗的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $("title").text("苗栗寵物餐廳推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦苗栗的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=food&location=miaoli"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "苗栗寵物餐廳推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦苗栗的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=food&location=miaoli"
+              );
+              break;
+            // location = yilan
+            case "yilan":
+              $("body > section.mb-5 > div.container > h1").text(
+                "宜蘭寵物餐廳推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "目前還沒有宜蘭寵物餐廳推薦，請先看看別的縣市。也歡迎到 Instagram 訊息推薦我們！"
+              );
+              // $("body > section.mb-5 > div.container > p").text(
+              //   "推薦宜蘭的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              // );
+              $("title").text("宜蘭寵物餐廳推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦宜蘭的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=food&location=yilan"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "宜蘭寵物餐廳推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦宜蘭的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=food&location=yilan"
+              );
+              break;
+            // 預設
+            default:
+              $("body > section.mb-5 > div.container > h1").text(
+                "寵物餐廳推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦台灣各地的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+
+              $("title").text("寵物餐廳推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦台灣各地的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=food"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "寵物餐廳推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦台灣各地的寵物餐廳給你！不只是寵物友善，我們覺得好吃才會放上來唷"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=food"
+              );
+              break;
           }
+          // 點擊filter後把<h1>, <p> 恢復預設
+          $(".filter-columns .option-set a").click(function () {
+            $("body > section.mb-5 > div.container > h1").text("阿奇歷險記");
+            $("body > section.mb-5 > div.container > p").text(
+              "讓阿奇帶你規劃質感滿分的寵物友善旅行！"
+            );
+          });
+        } else if (typeValue === "spot") {
+          // type = spot
+          switch (locationValue) {
+            // location = taipei
+            case "taipei":
+              $("body > section.mb-5 > div.container > h1").text(
+                "台北寵物景點推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦台北的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $("title").text("台北寵物景點推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦台北的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=spot&location=taipei"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "台北寵物景點推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦台北的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=spot&location=taipei"
+              );
+              break;
+            // location = taoyuan
+            case "taoyuan":
+              $("body > section.mb-5 > div.container > h1").text(
+                "桃園寵物景點推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦桃園的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $("title").text("桃園寵物景點推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦桃園的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=spot&location=taoyuan"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "桃園寵物景點推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦桃園的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=spot&location=taoyuan"
+              );
+              break;
+            // location = miaoli
+            case "miaoli":
+              $("body > section.mb-5 > div.container > h1").text(
+                "苗栗寵物景點推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦苗栗的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $("title").text("苗栗寵物景點推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦苗栗的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=spot&location=miaoli"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "苗栗寵物景點推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦苗栗的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=spot&location=miaoli"
+              );
+              break;
+            // location = yilan
+            case "yilan":
+              $("body > section.mb-5 > div.container > h1").text(
+                "宜蘭寵物景點推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "目前還沒有宜蘭寵物景點推薦，請先看看別的縣市。也歡迎到 Instagram 訊息推薦我們！"
+              );
+              // $("body > section.mb-5 > div.container > p").text(
+              //   "推薦宜蘭的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              // );
+              $("title").text("宜蘭寵物景點推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦宜蘭的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=spot&location=yilan"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "宜蘭寵物景點推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦宜蘭的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=spot&location=yilan"
+              );
+              break;
+            // 預設
+            default:
+              $("body > section.mb-5 > div.container > h1").text(
+                "寵物景點推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦台灣各地的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $("title").text("寵物景點推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦台灣各地的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=spot"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "寵物景點推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦台灣各地的寵物友善景點給你！爬山步道、水池游泳、草地跑跑，狗狗GO"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=spot"
+              );
+              break;
+          }
+          // 點擊filter後把<h1>, <p> 恢復預設
+          $(".filter-columns .option-set a").click(function () {
+            $("body > section.mb-5 > div.container > h1").text("阿奇歷險記");
+            $("body > section.mb-5 > div.container > p").text(
+              "讓阿奇帶你規劃質感滿分的寵物友善旅行！"
+            );
+          });
+        } else if (typeValue === "hotel") {
+          // type = hotel
+          switch (locationValue) {
+            // location = taipei
+            case "taipei":
+              $("body > section.mb-5 > div.container > h1").text(
+                "台北寵物飯店/寵物友善民宿"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "目前還沒有台北寵物友善住宿推薦，請先看看別的縣市。也歡迎到 Instagram 訊息推薦我們！"
+              );
+              // $("body > section.mb-5 > div.container > p").text(
+              //   "推薦台北的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              // );
+              $("title").text("台北寵物飯店/寵物友善民宿 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦台北的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=hotel&location=taipei"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "台北寵物飯店/寵物友善民宿 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦台北的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=hotel&location=taipei"
+              );
+              break;
+            // location = taoyuan
+            case "taoyuan":
+              $("body > section.mb-5 > div.container > h1").text(
+                "桃園寵物飯店/寵物友善民宿"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "目前還沒有桃園寵物友善住宿推薦，請先看看別的縣市。也歡迎到 Instagram 訊息推薦我們！"
+              );
+              // $("body > section.mb-5 > div.container > p").text(
+              //   "推薦桃園的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              // );
+              $("title").text("桃園寵物飯店/寵物友善民宿 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦桃園的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=hotel&location=taoyuan"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "桃園寵物飯店/寵物友善民宿 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦桃園的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=hotel&location=taoyuan"
+              );
+              break;
+            // location = miaoli
+            case "miaoli":
+              $("body > section.mb-5 > div.container > h1").text(
+                "苗栗寵物飯店/寵物友善民宿"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "目前還沒有苗栗寵物友善住宿推薦，請先看看別的縣市。也歡迎到 Instagram 訊息推薦我們！"
+              );
+              // $("body > section.mb-5 > div.container > p").text(
+              //   "推薦苗栗的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              // );
+              $("title").text("苗栗寵物飯店/寵物友善民宿 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦苗栗的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=hotel&location=miaoli"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "苗栗寵物飯店/寵物友善民宿 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦苗栗的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=hotel&location=miaoli"
+              );
+              break;
+            // location = yilan
+            case "yilan":
+              $("body > section.mb-5 > div.container > h1").text(
+                "宜蘭寵物飯店/寵物友善民宿"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦宜蘭的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $("title").text("宜蘭寵物飯店/寵物友善民宿 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦宜蘭的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=hotel&location=yilan"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "宜蘭寵物飯店/寵物友善民宿 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦宜蘭的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=hotel&location=yilan"
+              );
+              break;
+            // 預設
+            default:
+              $("body > section.mb-5 > div.container > h1").text(
+                "寵物飯店/寵物友善民宿"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦台灣各地的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $("title").text("寵物飯店/寵物友善民宿 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦台灣各地的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?type=hotel"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "寵物飯店/寵物友善民宿 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦台灣各地的寵物飯店、寵物友善民宿給你！不會二訪的，阿奇可是不推薦喔"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?type=hotel"
+              );
+              break;
+          }
+          // 點擊filter後把<h1>, <p> 恢復預設
+          $(".filter-columns .option-set a").click(function () {
+            $("body > section.mb-5 > div.container > h1").text("阿奇歷險記");
+            $("body > section.mb-5 > div.container > p").text(
+              "讓阿奇帶你規劃質感滿分的寵物友善旅行！"
+            );
+          });
+        } else if (typeValue === "camping") {
+          // type = camping
+          // switch (locationValue) {
+          //   // location = taipei
+          //   case "taipei":
+          //     $("body > section.mb-5 > div.container > h1").text(
+          //       "台北寵物友善露營地推薦"
+          //     );
+          //     $("body > section.mb-5 > div.container > p").text(
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $("title").text("台北寵物友善露營地推薦 - 阿奇歷險記");
+          //     $('meta[name="description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('link[rel="canonical"]').attr(
+          //       "href",
+          //       "https://www.akiwoofwoof.com?type=camping&location=taipei"
+          //     );
+          //     $('meta[property="og:title"]').attr(
+          //       "content",
+          //       "台北寵物友善露營地推薦 - 阿奇歷險記"
+          //     );
+          //     $('meta[property="og:description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('meta[property="og:url"]').attr(
+          //       "content",
+          //       "https://www.akiwoofwoof.com?type=camping&location=taipei"
+          //     );
+          //     break;
+          //   // location = taoyuan
+          //   case "taoyuan":
+          //     $("body > section.mb-5 > div.container > h1").text(
+          //       "桃園寵物友善露營地推薦"
+          //     );
+          //     $("body > section.mb-5 > div.container > p").text(
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $("title").text("桃園寵物友善露營地推薦 - 阿奇歷險記");
+          //     $('meta[name="description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('link[rel="canonical"]').attr(
+          //       "href",
+          //       "https://www.akiwoofwoof.com?type=camping&location=taoyuan"
+          //     );
+          //     $('meta[property="og:title"]').attr(
+          //       "content",
+          //       "桃園寵物友善露營地推薦 - 阿奇歷險記"
+          //     );
+          //     $('meta[property="og:description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('meta[property="og:url"]').attr(
+          //       "content",
+          //       "https://www.akiwoofwoof.com?type=camping&location=taoyuan"
+          //     );
+          //     break;
+          //   // location = miaoli
+          //   case "miaoli":
+          //     $("body > section.mb-5 > div.container > h1").text(
+          //       "苗栗寵物友善露營地推薦"
+          //     );
+          //     $("body > section.mb-5 > div.container > p").text(
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $("title").text("苗栗寵物友善露營地推薦 - 阿奇歷險記");
+          //     $('meta[name="description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('link[rel="canonical"]').attr(
+          //       "href",
+          //       "https://www.akiwoofwoof.com?type=camping&location=miaoli"
+          //     );
+          //     $('meta[property="og:title"]').attr(
+          //       "content",
+          //       "苗栗寵物友善露營地推薦 - 阿奇歷險記"
+          //     );
+          //     $('meta[property="og:description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('meta[property="og:url"]').attr(
+          //       "content",
+          //       "https://www.akiwoofwoof.com?type=camping&location=miaoli"
+          //     );
+          //     break;
+          //   // location = yilan
+          //   case "yilan":
+          //     $("body > section.mb-5 > div.container > h1").text(
+          //       "宜蘭寵物友善露營地推薦"
+          //     );
+          //     $("body > section.mb-5 > div.container > p").text(
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $("title").text("宜蘭寵物友善露營地推薦 - 阿奇歷險記");
+          //     $('meta[name="description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('link[rel="canonical"]').attr(
+          //       "href",
+          //       "https://www.akiwoofwoof.com?type=camping&location=yilan"
+          //     );
+          //     $('meta[property="og:title"]').attr(
+          //       "content",
+          //       "宜蘭寵物友善露營地推薦 - 阿奇歷險記"
+          //     );
+          //     $('meta[property="og:description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('meta[property="og:url"]').attr(
+          //       "content",
+          //       "https://www.akiwoofwoof.com?type=camping&location=yilan"
+          //     );
+          //     break;
+          //   // 預設
+          //   default:
+          //     $("body > section.mb-5 > div.container > h1").text(
+          //       "寵物友善露營地推薦"
+          //     );
+          //     $("body > section.mb-5 > div.container > p").text(
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $("title").text("寵物友善露營地推薦 - 阿奇歷險記");
+          //     $('meta[name="description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('link[rel="canonical"]').attr(
+          //       "href",
+          //       "https://www.akiwoofwoof.com?type=camping"
+          //     );
+          //     $('meta[property="og:title"]').attr(
+          //       "content",
+          //       "寵物友善露營地推薦 - 阿奇歷險記"
+          //     );
+          //     $('meta[property="og:description"]').attr(
+          //       "content",
+          //       "露營地都能帶狗吧？所以阿奇推薦的是我很喜歡的營地喔"
+          //     );
+          //     $('meta[property="og:url"]').attr(
+          //       "content",
+          //       "https://www.akiwoofwoof.com?type=camping"
+          //     );
+          //     break;
+          // }
+          // // 點擊filter後把<h1>, <p> 恢復預設
+          // $(".filter-columns .option-set a").click(function () {
+          //   $("body > section.mb-5 > div.container > h1").text("阿奇歷險記");
+          //   $("body > section.mb-5 > div.container > p").text(
+          //     "讓阿奇帶你規劃質感滿分的寵物友善旅行！"
+          //   );
+          // });
+        } else {
+          // type = 無
+          switch (locationValue) {
+            // location = taipei
+            case "taipei":
+              $("body > section.mb-5 > div.container > h1").text(
+                "台北寵物友善推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦台北的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $("title").text("台北寵物友善推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦台北的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?location=taipei"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "台北寵物友善推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦台北的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?location=taipei"
+              );
+              break;
+            // location = taoyuan
+            case "taoyuan":
+              $("body > section.mb-5 > div.container > h1").text(
+                "桃園寵物友善推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦桃園的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $("title").text("桃園寵物友善推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦桃園的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?location=taoyuan"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "桃園寵物友善推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦桃園的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?location=taoyuan"
+              );
+              break;
+            // location = miaoli
+            case "miaoli":
+              $("body > section.mb-5 > div.container > h1").text(
+                "苗栗寵物友善推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦苗栗的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $("title").text("苗栗寵物友善推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦苗栗的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?location=miaoli"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "苗栗寵物友善推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦苗栗的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?location=miaoli"
+              );
+              break;
+            // location = yilan
+            case "yilan":
+              $("body > section.mb-5 > div.container > h1").text(
+                "宜蘭寵物友善推薦"
+              );
+              $("body > section.mb-5 > div.container > p").text(
+                "推薦宜蘭的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $("title").text("宜蘭寵物友善推薦 - 阿奇歷險記");
+              $('meta[name="description"]').attr(
+                "content",
+                "推薦宜蘭的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $('link[rel="canonical"]').attr(
+                "href",
+                "https://www.akiwoofwoof.com?location=yilan"
+              );
+              $('meta[property="og:title"]').attr(
+                "content",
+                "宜蘭寵物友善推薦 - 阿奇歷險記"
+              );
+              $('meta[property="og:description"]').attr(
+                "content",
+                "推薦宜蘭的寵物友善餐廳、景點、住宿，都是我們親自體驗過的五星好評。"
+              );
+              $('meta[property="og:url"]').attr(
+                "content",
+                "https://www.akiwoofwoof.com?location=yilan"
+              );
+              break;
+          }
+          // 點擊filter後把<h1>, <p> 恢復預設
+          $(".filter-columns .option-set a").click(function () {
+            $("body > section.mb-5 > div.container > h1").text("阿奇歷險記");
+            $("body > section.mb-5 > div.container > p").text(
+              "讓阿奇帶你規劃質感滿分的寵物友善旅行！"
+            );
+          });
         }
       });
     </script>
