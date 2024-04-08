@@ -80,10 +80,12 @@ p {
   }
 }
 
-h1 span {
+h1 a {
   font-size: 0.8rem;
   padding: 0.5rem;
-  border-bottom: 1px solid #d2d2d7;
+  line-height: 3rem;
+  font-weight: 300 !important;
+  border-bottom: 1px solid #d2d2d7 !important;
 }
 
 .post article hr {
@@ -101,6 +103,7 @@ h1 span {
 .post article .post-info a {
   color: #1c1c1e;
   border-bottom: none;
+  font-weight: 300;
 }
 .post-info a:hover {
   text-decoration: underline;

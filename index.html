@@ -206,13 +206,13 @@
           <a href="/">🐶 akiwoofwoof</a>
         </li>
         <li class="menu-item col-12">
-          <a href="https://www.akiwoofwoof.com/?type=food">美食</a>
+          <a href="https://www.akiwoofwoof.com?type=food#filters">美食</a>
         </li>
         <li class="menu-item col-12">
-          <a href="https://www.akiwoofwoof.com/?type=spot">景點</a>
+          <a href="https://www.akiwoofwoof.com?type=spot#filters">景點</a>
         </li>
         <li class="menu-item col-12">
-          <a href="https://www.akiwoofwoof.com/?type=hotel">住宿</a>
+          <a href="https://www.akiwoofwoof.com?type=hotel#filters">住宿</a>
         </li>
         <!-- <li class="menu-item col-12">
           <a href="https://www.akiwoofwoof.com/?type=camping">露營</a>
@@ -314,7 +314,7 @@
     <!-- filter -->
     <section class="mb-5">
       <!-- top-filter -->
-      <div class="filters py-4 py-md-5 px-3 mb-4 mb-md-5">
+      <div class="filters py-4 py-md-5 px-3 mb-4 mb-md-5" id="filters">
         <div class="container py-3 py-md-4 px-4 px-md-5">
           <div class="top-filters row mb-3 mb-md-4">
             <p class="col-md-2 col-6">寵物友善 - 可落地</p>
@@ -708,7 +708,7 @@
       $(document).ready(function () {
         // 把網址參數變成{}
         let currentUrl = window.location.href;
-        let params = currentUrl.split("?")[1].split("&");
+        let params = currentUrl.split("?")[1].split("#")[0].split("&");
         let queryParams = {};
         params.forEach((param) => {
           let [key, value] = param.split("=");
