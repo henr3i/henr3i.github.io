@@ -104,3 +104,12 @@ a.item:hover {
 a.item.link h2 {
   display: inline-block;
 }
+
+@media (max-width: 768px) {
+  a.item img {
+    width: 100%; /* Full width */
+    height: auto; /* Auto height initially */
+    aspect-ratio: 1.8 / 1; /* 2:1 aspect ratio */
+    object-fit: cover; /* Ensure the image is fully covered */
+  }
+}
