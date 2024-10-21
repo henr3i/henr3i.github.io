@@ -18,6 +18,10 @@
   bottom: 70px;
   pointer-events: none;
 }
+.filters {
+  margin-top: -70px;
+}
+
 .carousel-container .slide p span {
   font-size: 0.8rem;
 }
@@ -104,6 +108,9 @@ img {
   .carousel-container .slide .title {
     bottom: 80px;
   }
+  .filters {
+    margin-top: -80px;
+  }
   .carousel-container .slide p {
     font-size: 1.4rem;
   }
@@ -124,6 +131,10 @@ img {
   .carousel-container .slide .title {
     bottom: 130px;
   }
+  .filters {
+    margin-top: -100px;
+  }
+
   /* 標題 */
   .carousel-container .slide p {
     font-size: 2rem;
