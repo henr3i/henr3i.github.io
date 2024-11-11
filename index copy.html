@@ -38,8 +38,6 @@
     <link type="text/css" rel="stylesheet" href="css/carousal-banner.css" />
     <link type="text/css" rel="stylesheet" href="css/filter.css" />
     <link type="text/css" rel="stylesheet" href="css/bottom.css" />
-    <link type="text/css" rel="stylesheet" href="css/popup.css" />
-    <link type="text/css" rel="stylesheet" href="css/post.css" />
     <!-- imported JS -->
     <script type="text/javascript" src="Javascript/jquery-3.6.js"></script>
     <script
@@ -196,7 +194,7 @@
       <button class="next-button"></button>
     </div>
 
-    <!-- filter & post-->
+    <!-- filter -->
     <section class="mb-5">
       <!-- top-filter -->
       <div class="filters pt-5 pb-4 pb-md-5 px-3 mb-4 mb-md-5" id="filters">
@@ -305,12 +303,11 @@
           </div>
         </div>
       </div>
-      <!-- items -->
+      <!-- item -->
       <div class="container">
         <h1 class="mx-4 mb-2 text-center">阿奇歷險記</h1>
         <p class="text-center">讓阿奇帶你規劃質感滿分的寵物友善旅行！</p>
         <div class="list row justify-content-around align-items-start mt-5">
-          <!-- Parko Parco -->
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-2 py-md-3 item pet-friendly taipei food link"
             href="/food/parko-parco"
@@ -329,7 +326,6 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- Pizza 3次方 -->
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-2 py-md-3 item pet-friendly taipei food link"
             href="/food/pizza-3"
@@ -350,7 +346,7 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- 礁心鐵板燒 -->
+
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-3 item yilan food link"
             href="/food/jiao-xin-teppanyaki"
@@ -370,7 +366,7 @@
               <span>美食</span>
             </div>
           </a>
-          <!-- 土庫岳、山豬淚湖 -->
+
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-3 item pet-friendly taipei spot link"
             href="/spot/mountain-tukuyue"
@@ -391,7 +387,7 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- 初衷小鹿 -->
+
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-2 py-md-3 item pet-friendly taipei food link"
             href="/food/deers-hotpot-bistro"
@@ -412,7 +408,7 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- 跑跑 -->
+
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-3 item pet-friendly yilan hotel link"
             href="/hotel/pawpawland"
@@ -433,7 +429,6 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- 又一間商行 -->
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-2 py-md-3 item pet-friendly taipei food link"
             href="/food/yu-yi-jian-spaghetti"
@@ -454,7 +449,6 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- June Burger -->
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-2 py-md-3 item pet-friendly taipei food link"
             href="/food/june-burger"
@@ -475,7 +469,6 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- GOGO WaterWorld -->
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-2 py-md-3 item pet-friendly miaoli spot link"
             href="/spot/gogo-waterworld"
@@ -496,7 +489,6 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- 羊稠森林步道 -->
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-2 py-md-3 item pet-friendly taoyuan spot link"
             href="/spot/yangchou-forest-trail"
@@ -517,7 +509,6 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- 雙峰草堂 -->
           <a
             class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-2 py-md-3 item pet-friendly miaoli food link"
             href="/food/twin-peaks-tea-house"
@@ -538,97 +529,6 @@
               <span>可落地</span>
             </div>
           </a>
-          <!-- item -->
-          <a
-            class="col-lg-3 col-md-5 mx-4 mb-5 px-4 py-2 py-md-3 item pet-friendly taipei spot popup"
-            data-modal="modal1"
-          >
-            <h2 class="mb-2 mb-md-3 mt-1 ml-2">橫嶺古道</h2>
-            <img
-              class="mb-2 mb-md-3"
-              src="img/item-img/hengling-old-trail.jpg"
-              alt="pizza-3"
-              loading="lazy"
-            />
-            <p class="mb-3">
-              在陽明山就有台灣嵐山，很好走的竹林步道，狗狗開心，夏天走也涼涼的。
-            </p>
-            <div class="tags row mb-1 mb-md-0">
-              <span>台北</span>
-              <span>景點</span>
-              <span>可落地</span>
-            </div>
-          </a>
-          <div id="modal1" class="popup-window">
-            <div class="popup-content">
-              <span class="close-btn" data-modal="modal1">&times;</span>
-              <div class="popup-body">
-                <p class="popup-title">橫嶺古道</p>
-                <h3>更多照片</h3>
-                <img
-                  src="img/spot/hengling-old-trail/1.jpg"
-                  alt="橫嶺古道"
-                  loading="lazy"
-                />
-                <div class="row mb-4 mx-0 px-sm-3 mt-3">
-                  <figure class="col-6 px-0 pr-2">
-                    <img
-                      src="img/spot/hengling-old-trail/2.jpg"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </figure>
-                  <figure class="col-6 px-0 pl-2">
-                    <img
-                      src="img/spot/hengling-old-trail/3.jpg"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </figure>
-                </div>
-                <img src="img/spot/hengling-old-trail/4.jpg" alt="" />
-                <div class="row mb-4 mx-0 px-sm-3 mt-3">
-                  <figure class="col-6 px-0 pr-2">
-                    <img
-                      src="img/spot/hengling-old-trail/5.jpg"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </figure>
-                  <figure class="col-6 px-0 pl-2">
-                    <img
-                      src="img/spot/hengling-old-trail/6.jpg"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </figure>
-                </div>
-                <h3>交通資訊</h3>
-                <div class="spot-info row">
-                  <div class="col-md-6">
-                    <p class="spot-info--title">橫嶺古道</p>
-                    <p>地址<span>台北市北投區紗帽路76號</span></p>
-                    <p>停車<span>紅壇登山口旁有停車場 </span></p>
-                    <a
-                      class="button mt-2"
-                      href="https://maps.app.goo.gl/bKMcXtCE77WLm3tS6"
-                      target="_blank"
-                      >立即前往</a
-                    >
-                  </div>
-                  <iframe
-                    class="col-md-6 mt-4 mt-md-0"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.721322348734!2d121.53412019678956!3d25.1451108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ade238c666db%3A0x41fcf8b241624b6!2z5qmr5ba65Y-k6YGT57SF5aOH55m75bGx5Y-j!5e0!3m2!1sen!2stw!4v1731337549512!5m2!1sen!2stw"
-                    width="100%"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -752,42 +652,6 @@
         startSlideInterval();
         // 初始顯示第一張圖片
         showSlide(currentSlide);
-      });
-    </script>
-
-    <!-- JS: popup -->
-    <script>
-      // 獲取所有的「開啟彈跳視窗」按鈕和「關閉」按鈕
-      const openModalButtons = document.querySelectorAll(".popup");
-      const closeModalButtons = document.querySelectorAll(".close-btn");
-
-      // 為每個開啟按鈕添加點擊事件
-      openModalButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const modalId = button.getAttribute("data-modal");
-          const modal = document.getElementById(modalId);
-          if (modal) {
-            modal.style.display = "flex";
-          }
-        });
-      });
-
-      // 為每個關閉按鈕添加點擊事件
-      closeModalButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const modalId = button.getAttribute("data-modal");
-          const modal = document.getElementById(modalId);
-          if (modal) {
-            modal.style.display = "none";
-          }
-        });
-      });
-
-      // 點擊視窗外部時關閉對應的彈跳視窗
-      window.addEventListener("click", (event) => {
-        if (event.target.classList.contains("popup-window")) {
-          event.target.style.display = "none";
-        }
       });
     </script>
 

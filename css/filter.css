@@ -113,3 +113,6 @@ a.item.link h2 {
     object-fit: cover; /* Ensure the image is fully covered */
   }
 }
+a.item h2 {
+  font-weight: 300;
+}
